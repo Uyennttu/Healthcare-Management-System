@@ -23,12 +23,15 @@ namespace Healthcare_Management_System
             MedicalHistory = medicalHistory;
 
         }
-        public string DisplayAppointment()
-
-            => $"ID: {Id} ---Patient Name: {Patient.FirstName} {Patient.LastName} " +
+        public void DisplayAppointment()
+        {
+            Console.WriteLine($"ID: {Id} ---Patient Name: {Patient.FirstName} {Patient.LastName} " +
             $"---Doctor Name: {Doctor.FirstName} {Doctor.LastName}\n" +
-            $"---Patient's Medical History: {Patient.MedicalHistory} "+
-            $"---Appointment Time: {DateTime}.";
+            $"---Patient's Medical History: {Patient.MedicalHistory} " +
+            $"---Appointment Time: {DateTime}.");
+        }
+
+            
         
     }
 }

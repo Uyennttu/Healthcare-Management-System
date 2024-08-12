@@ -10,8 +10,8 @@ namespace Healthcare_Management_System
     public class Hospital
     {
         public List<Patient> patients = new List<Patient> {
-            new Patient("1", "John", "Doe","Headache",65),
-            new Patient("2", "Jane", "Smith", "Coughing", 34)
+            new Patient("1", "John", "Doe", "Diabetes",65),
+            new Patient("2", "Jane", "Smith", "Hypertension", 34)
         };
 
         public List<Nurse> nurses = new List<Nurse>();
@@ -22,6 +22,22 @@ namespace Healthcare_Management_System
             };
         public List<Appointment> appointments = new List<Appointment>();
 
+        /*public List<MedicalRecord> medicalRecords = new List<MedicalRecord>{
+            new MedicalRecord("1",,"high blood level","exercise",),
+        };*/
+
+
+       /* public void ShowMedicalRecord()
+        {
+            DisplayAllPatients();
+            Console.WriteLine("Which patient?");
+            var inputPatient=Console.ReadLine();
+            if(int.TryParse(inputPatient, out int selectedPatient))
+            {
+                
+            }
+            else { Console.WriteLine("Invalid input. Enter a number."); }
+        }*/
         public void SearchAppointment(string query)            
         {
             DateTime.TryParse(query, out DateTime queryDate);
@@ -33,7 +49,7 @@ namespace Healthcare_Management_System
             {
                 foreach (var result in results)
                 {
-                    Console.WriteLine(result.DisplayAppointment());
+                    result.DisplayAppointment();
                 }
             }
             else
@@ -48,7 +64,7 @@ namespace Healthcare_Management_System
                 || (p.LastName.Equals(query, StringComparison.OrdinalIgnoreCase))).ToList();
             if (results.Any()) {
                 foreach (var result in results) {
-                    Console.WriteLine(result.DisplayInfo());
+                    result.DisplayInfo();
                 }
             }
             else { Console.WriteLine("No patient found."); }
@@ -63,7 +79,7 @@ namespace Healthcare_Management_System
             {
                 foreach (var result in results)
                 {
-                    Console.WriteLine(result.DisplayInfo());
+                    result.DisplayInfo();
                 }
             }
             else { Console.WriteLine("No doctor found."); }
@@ -93,7 +109,7 @@ namespace Healthcare_Management_System
         {
             for (int i = 0; i < appointments.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. {appointments[i].DisplayAppointment()}");
+                Console.Write($"{i + 1}."); appointments[i].DisplayAppointment();
             }
         }
 
@@ -163,7 +179,7 @@ namespace Healthcare_Management_System
         {
             for (int i = 0; i < patients.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. {patients[i].DisplayInfo()}");
+                Console.Write($"{i + 1}."); patients[i].DisplayInfo();
             }
         }
         public void AddPatient()
@@ -209,7 +225,7 @@ namespace Healthcare_Management_System
         {
             for (int i = 0; i < nurses.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. {nurses[i].DisplayInfo()}");
+                Console.Write($"{i + 1}."); nurses[i].DisplayInfo();
             }
         }
         public void AddNurse()
@@ -256,7 +272,7 @@ namespace Healthcare_Management_System
         {
             for (int i = 0; i < doctors.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. {doctors[i].DisplayInfo()}");
+                Console.Write($"{i + 1}."); doctors[i].DisplayInfo();
             }
         }
         public void AddDoctor()

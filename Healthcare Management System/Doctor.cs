@@ -17,11 +17,14 @@ namespace Healthcare_Management_System
             Experience = experience;
         }
 
-        public override string DisplayInfo()
-                 =>$"ID: {Id} " +
-                    $"---Name: {FirstName} {LastName} " +
-                    $"---Specialty: {Specialty} " +
-                    $"---Experience: {Experience} years.";
+        public override void DisplayInfo()
+        {
+            Console.WriteLine($"ID: {Id,-5} " +
+                    $"Name: {FirstName} {LastName, -7} " +
+                    $"Specialty: {Specialty,-15} " +
+                    $"Experience: {Experience} years");
+        }
+                 
 
         
 

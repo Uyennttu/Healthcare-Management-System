@@ -19,7 +19,7 @@ namespace Healthcare_Management_System
             LastName = lastName;
         }
 
-        public abstract string DisplayInfo();
+        public abstract void DisplayInfo();
 
        
 

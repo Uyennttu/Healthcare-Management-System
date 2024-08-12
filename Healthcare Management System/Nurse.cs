@@ -15,12 +15,13 @@ namespace Healthcare_Management_System
             Department = department;
             Experience = experience;
         }
-        public override string DisplayInfo()
-        
-            =>$"ID: {Id} " +
-                $"---Name: {FirstName} {LastName} " +
-                $"---Department: {Department} " +
-                $"---Experience: {Experience} years.";
+        public override void DisplayInfo()
+        {
+            Console.WriteLine($"ID: {Id, -5} " +
+                $"Name: {FirstName} {LastName, -7} " +
+                $"Department: {Department, -15} " +
+                $"Experience: {Experience} years");
+        }
         
     }
 

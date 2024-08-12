@@ -17,12 +17,15 @@ namespace Healthcare_Management_System
             MedicalHistory = medicalHistory;
             Age = age;
         }
-        public override string DisplayInfo()
+        public override void DisplayInfo()
+        {
+             Console.WriteLine($"ID: {Id, -5}" +
+                $"Name: {FirstName} {LastName, -7}" +
+                $"Age: {Age,-5}" +
+                $"Medical History: {MedicalHistory}");
+        }
         
-            =>$"ID: {Id} " +
-                $"---Name: {FirstName} {LastName} " +
-                $"---Age: {Age} " +
-                $"---Medical History: {MedicalHistory}.";
+           
         
     }
 }
